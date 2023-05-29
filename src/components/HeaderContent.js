@@ -1,115 +1,123 @@
-import { View, Text, Image, TextInput, Platform } from "react-native";
-import React, { useState } from "react";
+import React from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+
 
 const HeaderContent = () => {
-  const [search, setSearch] = useState("");
-
   return (
-    <View
-      style={{
-        flex: Platform.OS === "ios" ? 0.6 : 0.5,
-      }}
-    >
-      {/* location icons */}
-      <View
-        style={{
-          marginTop: Platform.OS === "ios" ? 60 : 35,
-          marginHorizontal: 17,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
-        <View style={{ flex: 1, justifyContent: "center" }}>
-          <Image
-            source={require("../assets/icons/location.png")}
-            style={{ width: 12.5, height: 15, tintColor: "white" }}
-          />
-        </View>
-        <View style={{ paddingRight: 25, justifyContent: "center" }}>
-          <Image
-            source={require("../assets/icons/bell.png")}
-            style={{ width: 17, height: 15.85, tintColor: "white" }}
-          />
-        </View>
-        <View style={{ justifyContent: "center" }}>
-          <Image
-            source={require("../assets/icons/cart.png")}
-            style={{ width: 18.5, height: 13.49, tintColor: "white" }}
-          />
+    <View style={styles.container}>
+      <View style={styles.headerRow}>
+        <Image source={require('../assets/icons/location.png')} style={styles.icon} />
+        <View style={styles.rightIcons}>
+        <Image source={require('../assets/icons/bell.png')}  style={styles.icon} />
+        <Image source={require('../assets/icons/cart.png')} style={styles.icon} />
         </View>
       </View>
-
-      {/* header text */}
-      <View style={{ marginTop: 30, marginLeft: 16 }}>
-        <Text
-          style={{
-            color: "white",
-            fontSize: 25,
-            fontWeight: "600",
-            lineHeight: 30,
-          }}
-        >
-          What dish would you like to order
-        </Text>
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <View style={{ justifyContent: "center" }}>
-            <Text
-              style={{
-                color: "#121212",
-                fontSize: 25,
-                fontWeight: "700",
-                lineHeight: 28,
-                fontFamily: "satoshi",
-              }}
-            >
-              today?
-            </Text>
-          </View>
+      <Text style={styles.headerText}>What would you like to have today?</Text>
+      <View style={styles.searchBar}>
+        <Image source={require('../assets/icons/search.png')} style={styles.searchIcon} />
+        <Text style={styles.searchText}>Search here</Text>
+      </View>
+      <View style={styles.scheduleBox}>
+        <Text style={styles.scheduleText}>Schedule Orders</Text>
+        <Text style={styles.scheduleDescription}>and have it delivered</Text>
+        <Text style={styles.scheduleDescription}>at a later time today!</Text>
         
-        </View>
+        <Image source={require('../assets/icons/calender.png')}  style={styles.scheduleImage} />
+        <View style={styles.form}>
+        <TouchableOpacity>
+        <Text style={styles.orderNowText}>Order Now</Text>
+        </TouchableOpacity>
       </View>
-
-      {/* search bar */}
-      <View
-        style={{
-          backgroundColor: null,
-          height: 50,
-          borderWidth: 0.5,
-          borderColor: "white",
-          marginTop: 20,
-          flexDirection: "row",
-          paddingHorizontal: 15,
-          marginHorizontal: 30,
-          borderRadius: 12,
-        }}
-      >
-        <View style={{ justifyContent: "center" }}>
-          <Image
-            source={require("../assets/icons/search.png")}
-            style={{
-              width: 11.98,
-              height: 11.98,
-              justifyContent: "center",
-              tintColor: "#6B6C6C",
-            }}
-          />
-        </View>
-
-        <TextInput
-          autoFocus={false}
-          onChangeText={setSearch}
-          value={search}
-          placeholder={"Search here"}
-          placeholderTextColor={"white"}
-          style={{
-            color: "black",
-            paddingLeft: 12,
-            justifyContent: "center",
-          }}
-        />
       </View>
+      
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    backgroundColor: '#ffffff',
+  },
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  icon: {
+    width: 24,
+    height: 24,
+  },
+  rightIcons: {
+    flexDirection: 'row',
+    justifyContent: "space-evenly",
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 8,
+    padding: 8,
+    
+  },
+  searchIcon: {
+    marginRight: 10,
+    width: 25,
+    height: 11.98,
+    justifyContent: "center",
+    tintColor: "#6B6C6C",
+  },
+  searchText: {
+    fontSize: 16,
+    color: "black",
+    paddingLeft: 1,
+    justifyContent: "center",
+    borderRadius: 7,
+  },
+  scheduleBox: {
+    backgroundColor: 'darkgoldenrod',
+    borderRadius: 8,
+    padding: 10,
+    marginTop: 20,
+  },
+  scheduleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    marginTop: 10,
+    borderRadius: 10,
+    height: 20,
+     
+  },
+  scheduleDescription: {
+    fontSize: 16,
+  },
+  scheduleImage: {
+    width: 100,
+    height: 100,
+    alignSelf: 'flex-end',
+    marginTop: 10,
+  },
+  form: {
+    backgroundColor: 'green',
+    borderRadius: 8,
+    padding: 10,
+    marginTop: 10,
+    width: 150,
+  },
+  orderNowText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+  },
+});
 
 export default HeaderContent;
