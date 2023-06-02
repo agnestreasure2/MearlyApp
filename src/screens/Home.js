@@ -10,6 +10,7 @@ const HomeScreen = ({ navigation }) => {
     navigation.navigate('TrendingNow');
   };
 
+
   return (
     <View style={styles.container}>
       <HeaderContent />
@@ -21,6 +22,7 @@ const HomeScreen = ({ navigation }) => {
           <TouchableOpacity onPress={handleTrendingNowPress}>
           <Text style={styles.trendingText}>Trending Now</Text>
           </TouchableOpacity>
+          
           <Text style={styles.seeAllText}>See All</Text>
         </View>
         <View style={styles.imagesContainer}>
@@ -31,23 +33,29 @@ const HomeScreen = ({ navigation }) => {
             />
             
             <Text style={styles.imageText}>Jollof Rice and Beef</Text>
-            <Text style={styles.imageText}>$9.99</Text>
+            <Text style={styles.imageText}>₦750</Text>
             <View style={styles.ratingContainer}>
               <Text style={styles.ratingText}>4.5</Text>
-              <Text style={styles.ratingText}>⭐️</Text>
+              <Image
+                  source={require('../assets/icons/star.png')}
+                  style={{ width: 14, height: 14, tintColor: 'green' }}
+                />
             </View>
           </View>
           <View style={styles.imageWrapper}>
             <Image
-              source={require('../assets/images/two.png')}
+              source={require('../assets/images/pyam.jpg')}
               style={styles.image}
             />
             
             <Text style={styles.imageText}>Pounded Yam and Egusi</Text>
-            <Text style={styles.imageText}>$12.99</Text>
+            <Text style={styles.imageText}>₦2,200</Text>
             <View style={styles.ratingContainer}>
-              <Text style={styles.ratingText}>4.2</Text>
-              <Text style={styles.ratingText}>⭐️</Text>
+              <Text style={styles.ratingText}>4.</Text>
+              <Image
+                  source={require('../assets/icons/star.png')}
+                  style={{ width: 14, height: 14, tintColor: 'green' }}
+                />
             </View>
           </View>
           {/* Add more image wrappers for additional items */}

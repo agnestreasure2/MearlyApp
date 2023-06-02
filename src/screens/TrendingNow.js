@@ -1,20 +1,28 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const TrendingNow = () => {
+    const navigation = useNavigation();
+
+    const handleRecommendedPress = () => {
+        navigation.navigate('Recommended');
+      };
   return (
     <View style={styles.container}>
-      <Text style={styles.trendingText}>Trending Now</Text>
+      <TouchableOpacity onPress={handleRecommendedPress}>
+          <Text style={styles.trendingText}>Trending Now</Text>
+          </TouchableOpacity>
       <View style={styles.imagesContainer}>
         <View style={styles.row}>
           <View style={styles.imageContainer}>
             <Image
-              source={require('../assets/images/two.png')}
+              source={require('../assets/images/one.png')}
               style={styles.image}
             />
             <Text style={styles.imageText}>Jollof Rice and Beef</Text>
             <View style={styles.detailsContainer}>
-              <Text style={styles.priceText}>#750</Text>
+              <Text style={styles.priceText}>₦750</Text>
               <View style={styles.ratingContainer}>
                 <Text style={styles.ratingText}>4.5</Text>
                 <Image
@@ -26,12 +34,12 @@ const TrendingNow = () => {
           </View>
           <View style={styles.imageContainer}>
             <Image
-              source={require('../assets/images/one.png')}
+              source={require('../assets/images/pyam.jpg')}
               style={styles.image}
             />
             <Text style={styles.imageText}>Poundo Yam & Egusi</Text>
             <View style={styles.detailsContainer}>
-              <Text style={styles.priceText}>#2,200</Text>
+              <Text style={styles.priceText}>₦2,200</Text>
               <View style={styles.ratingContainer}>
                 <Text style={styles.ratingText}>4.5</Text>
                 <Image
@@ -45,12 +53,12 @@ const TrendingNow = () => {
         <View style={styles.row}>
           <View style={styles.imageContainer}>
             <Image
-              source={require('../assets/images/two.png')}
+              source={require('../assets/images/sharwama.jpg')}
               style={styles.image}
             />
             <Text style={styles.imageText}>Sharwama</Text>
             <View style={styles.detailsContainer}>
-              <Text style={styles.priceText}>#1500</Text>
+              <Text style={styles.priceText}>₦1500</Text>
               <View style={styles.ratingContainer}>
                 <Text style={styles.ratingText}>4.5</Text>
                 <Image
@@ -66,14 +74,14 @@ const TrendingNow = () => {
           
           <View style={styles.imageContainer}>
             <Image
-              source={require('../assets/images/one.png')}
+              source={require('../assets/images/smokyrice.jpg')}
               style={styles.image}
             />
-            <Text style={styles.imageText}>Product 4</Text>
+            <Text style={styles.imageText}>Bbq Smoky Rice</Text>
             <View style={styles.detailsContainer}>
-              <Text style={styles.priceText}>$11.99</Text>
+              <Text style={styles.priceText}>₦1,700</Text>
               <View style={styles.ratingContainer}>
-                <Text style={styles.ratingText}>4.3</Text>
+                <Text style={styles.ratingText}>4.5</Text>
                 <Image
                   source={require('../assets/icons/star.png')}
                   style={styles.icon}
@@ -86,14 +94,14 @@ const TrendingNow = () => {
         <View style={styles.row}>
           <View style={styles.imageContainer}>
             <Image
-              source={require('../assets/images/two.png')}
+              source={require('../assets/images/friedrice.jpg')}
               style={styles.image}
             />
-            <Text style={styles.imageText}>Product 3</Text>
+            <Text style={styles.imageText}>9ja Frice Jollof Rice</Text>
             <View style={styles.detailsContainer}>
-              <Text style={styles.priceText}>$14.99</Text>
+              <Text style={styles.priceText}>₦1,500</Text>
               <View style={styles.ratingContainer}>
-                <Text style={styles.ratingText}>4.8</Text>
+                <Text style={styles.ratingText}>4.5</Text>
                 <Image
                   source={require('../assets/icons/star.png')}
                   style={styles.icon}
@@ -107,14 +115,14 @@ const TrendingNow = () => {
           
           <View style={styles.imageContainer}>
             <Image
-              source={require('../assets/images/one.png')}
+              source={require('../assets/images/spag.jpg')}
               style={styles.image}
             />
-            <Text style={styles.imageText}>Product 4</Text>
+            <Text style={styles.imageText}>Stir-fry Spaghetti</Text>
             <View style={styles.detailsContainer}>
-              <Text style={styles.priceText}>$11.99</Text>
+              <Text style={styles.priceText}>₦1,200</Text>
               <View style={styles.ratingContainer}>
-                <Text style={styles.ratingText}>4.3</Text>
+                <Text style={styles.ratingText}>4.5</Text>
                 <Image
                   source={require('../assets/icons/star.png')}
                   style={styles.icon}
@@ -140,7 +148,7 @@ const styles = StyleSheet.create({
   trendingText: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 20,
   },
   imagesContainer: {
     flex: 1,
@@ -184,6 +192,8 @@ const styles = StyleSheet.create({
   icon: {
     width: 12,
     height: 12,
+    tintColor: 'green',
+    
   },
 });
 

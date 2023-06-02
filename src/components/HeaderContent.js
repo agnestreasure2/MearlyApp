@@ -8,8 +8,9 @@ const HeaderContent = () => {
       <View style={styles.headerRow}>
         <Image source={require('../assets/icons/location.png')} style={styles.icon} />
         <View style={styles.rightIcons}>
-        <Image source={require('../assets/icons/bell.png')}  style={styles.icon} />
-        <Image source={require('../assets/icons/cart.png')} style={styles.icon} />
+        <Image source={require('../assets/icons/bell.png')} marginRight={25}  style={styles.icon} />
+        <Image source={require('../assets/icons/cart.png')} marginRight={20} style={styles.icon} />
+       
         </View>
       </View>
       <Text style={styles.headerText}>What would you like to have today?</Text>
@@ -21,7 +22,6 @@ const HeaderContent = () => {
         <Text style={styles.scheduleText}>Schedule Orders</Text>
         <Text style={styles.scheduleDescription}>and have it delivered</Text>
         <Text style={styles.scheduleDescription}>at a later time today!</Text>
-        
         <Image source={require('../assets/icons/calender.png')}  style={styles.scheduleImage} />
         <View style={styles.form}>
         <TouchableOpacity>
@@ -47,20 +47,22 @@ const styles = StyleSheet.create({
   icon: {
     width: 24,
     height: 24,
+    justifyContent: 'space-between',
+    
   },
   rightIcons: {
     flexDirection: 'row',
-    justifyContent: "space-evenly",
+   
   },
   headerText: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 15,
   },
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 20,
     borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 8,
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
   },
   scheduleBox: {
-    backgroundColor: 'darkgoldenrod',
+    backgroundColor: '#F2C14E',
     borderRadius: 8,
     padding: 10,
     marginTop: 20,
