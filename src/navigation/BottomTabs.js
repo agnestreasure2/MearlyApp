@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import Home from "../screens/Home";
-import Explore from "../screens/Explore";
+import Fav from "../screens/Fav";
 import Orders from "../screens/Orders";
 import Favourite from "../screens/Favourite";
 import Account from "../screens/Account";
@@ -40,12 +40,12 @@ const BottomTabs = () => {
                 />
               </View>
             );
-          },
+          }, 
         }}
       />
       <Tab.Screen
-        name="Explore"
-        component={Explore}
+        name="Fav"
+        component={Fav}
         options={{
           headerShown: false,
           tabBarIcon: () => {
@@ -58,7 +58,7 @@ const BottomTabs = () => {
                 }}
               >
                 <Image
-                  source={require("../assets/icons/Ellipse.png")}
+                  source={require("../assets/icons/favourite.png")}
                   style={{
                     width: 20,
                     height: 20,
@@ -72,7 +72,7 @@ const BottomTabs = () => {
       />
       <Tab.Screen
         name="Orders"
-        component={Orders}
+        component={Orders} 
         options={{
           headerShown: false,
           tabBarIcon: () => {

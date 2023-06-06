@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const TrendingNow = () => {
     const navigation = useNavigation();
@@ -11,7 +12,13 @@ const TrendingNow = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={handleRecommendedPress}>
-          <Text style={styles.trendingText}>Trending Now</Text>
+      <View style={styles.container}></View>
+  <View style={styles.headerContainer}>
+    <TouchableOpacity style={styles.arrow} onPress={() => navigation.goBack()}>
+      <Ionicons name="ios-arrow-back" size={24} color="black" />
+    </TouchableOpacity>
+    <Text style={styles.heading}>Trending Today</Text>
+  </View>
           </TouchableOpacity>
       <View style={styles.imagesContainer}>
         <View style={styles.row}>
@@ -145,10 +152,28 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 20,
   },
-  trendingText: {
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 0,
+    marginLeft: 4,
+    marginBottom: 8,
+  },
+  arrow: {
+    marginRight: 10,
+  },
+  heading: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginRight: 10,
+  },
+  tabContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginVertical: 10,
+  },
+  tabText: {
+    fontSize: 16,
   },
   imagesContainer: {
     flex: 1,
@@ -167,9 +192,12 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   imageText: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 12,
+    fontWeight: '500',
     marginTop: 10,
+    fontStyle: 'normal',
+    lineHeight: 20,
+    olor: '#3D4040',
   },
   detailsContainer: {
     flexDirection: 'row',
@@ -177,8 +205,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   priceText: {
-    fontSize: 14,
-    fontWeight: 'bold',
+    fontSize: 12,
+    fontWeight: '700',
+    fontStyle: 'normal',
+    lineHeight: 20,
+    
   },
   ratingContainer: {
     flexDirection: 'row',
@@ -188,6 +219,8 @@ const styles = StyleSheet.create({
   ratingText: {
     fontSize: 14,
     marginRight: 5,
+    fontWeight: '500',
+    color: 'green',
   },
   icon: {
     width: 12,

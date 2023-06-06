@@ -81,10 +81,13 @@ const styles = StyleSheet.create({
   },
   trendingText: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    color:  '#121212',
+    
   },
   seeAllText: {
-    fontSize: 16,
+    fontSize: 12,
+    fontWeight: 700,
     color: 'green',
   },
   imagesContainer: {

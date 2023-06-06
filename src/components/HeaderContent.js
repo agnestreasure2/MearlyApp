@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
    
   },
   headerText: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontWeight: '700',
     marginTop: 15,
   },
   searchBar: {
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   scheduleText: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontWeight: '700',
     marginBottom: 10,
     marginTop: 10,
     borderRadius: 10,
@@ -100,25 +100,31 @@ const styles = StyleSheet.create({
   },
   scheduleDescription: {
     fontSize: 16,
+    fontWeight: 500,
   },
   scheduleImage: {
     width: 100,
     height: 100,
     alignSelf: 'flex-end',
     marginTop: 10,
+
   },
   form: {
     backgroundColor: 'green',
-    borderRadius: 8,
-    padding: 10,
-    marginTop: 10,
-    width: 150,
+    borderRadius: 20,
+    paddingTop:  8, 
+    paddingBottom: 8,
+    width: 160,
+    height: 40,
   },
   orderNowText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'white',
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#FFFFFF',
     textAlign: 'center',
+   
+   
+    
   },
 });
 
